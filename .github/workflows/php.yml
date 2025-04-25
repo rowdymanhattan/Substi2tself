@@ -9,7 +9,20 @@ on:
 permissions:
   contents: read
 
-jobs:
+jobs:            - name: Auto Increment Semver Action
+  # You may pin to the exact commit or the version.
+  # uses: MCKanpolat/auto-semver-action@5003b8d37f4b03d95f15303ea10242cbf7c13141
+  uses: MCKanpolat/auto-semver-action@1.0.11
+  with:
+    # identifier for version (beta,alpha..)
+    identifier: # optional, default is 
+    # Uses this if any labels cannot be found in the commit messages.
+    releaseType: # default is patch
+    # Increments a version for each commit.
+    incrementPerCommit: # optional, default is false
+    # Token to get tags from the repo. Pass in using `secrets.GITHUB_TOKEN`.
+    github_token: 
+          
   build:
 
     runs-on: ubuntu-latest
